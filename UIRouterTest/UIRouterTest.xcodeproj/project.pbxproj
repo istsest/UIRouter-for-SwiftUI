@@ -95,7 +95,7 @@
 			mainGroup = AFD7B7F42EE78EB1002FE922;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				AFD7B8312EE7918E002FE922 /* XCRemoteSwiftPackageReference "UIRouter" */,
+				AFD7B87C2EE7993A002FE922 /* XCRemoteSwiftPackageReference "UIRouter" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AFD7B7FE2EE78EB1002FE922 /* Products */;
@@ -264,6 +264,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,6 +297,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,12 +339,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AFD7B8312EE7918E002FE922 /* XCRemoteSwiftPackageReference "UIRouter" */ = {
+		AFD7B87C2EE7993A002FE922 /* XCRemoteSwiftPackageReference "UIRouter" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/istsest/UIRouter";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

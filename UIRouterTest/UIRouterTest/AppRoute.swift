@@ -5,6 +5,7 @@
 //
 
 import SwiftUI
+import UIRouter
 
 /// App route definition (example)
 enum AppRoute: UIRoute {
