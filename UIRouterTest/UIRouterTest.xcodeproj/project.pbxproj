@@ -6,37 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		AFD7B7E02EE788F2002FE922 /* UIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7B7DD2EE788F2002FE922 /* UIRoute.swift */; };
-		AFD7B7E12EE788F2002FE922 /* TabRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7B7DC2EE788F2002FE922 /* TabRouterView.swift */; };
-		AFD7B7E22EE788F2002FE922 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7B7DB2EE788F2002FE922 /* RouterView.swift */; };
-		AFD7B7E32EE788F2002FE922 /* UIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7B7DE2EE788F2002FE922 /* UIRouter.swift */; };
-		AFD7B7EE2EE78BB3002FE922 /* PACKAGE_README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B7EB2EE78BB3002FE922 /* PACKAGE_README.md */; };
-		AFD7B7EF2EE78BB3002FE922 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B7ED2EE78BB3002FE922 /* README.md */; };
-		AFD7B7F02EE78BB3002FE922 /* PACKAGE_STRUCTURE.md in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B7EC2EE78BB3002FE922 /* PACKAGE_STRUCTURE.md */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		AFD7B7CD2EE78892002FE922 /* TabRouterTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabRouterTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFD7B7DB2EE788F2002FE922 /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
-		AFD7B7DC2EE788F2002FE922 /* TabRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouterView.swift; sourceTree = "<group>"; };
-		AFD7B7DD2EE788F2002FE922 /* UIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoute.swift; sourceTree = "<group>"; };
-		AFD7B7DE2EE788F2002FE922 /* UIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRouter.swift; sourceTree = "<group>"; };
-		AFD7B7EB2EE78BB3002FE922 /* PACKAGE_README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = PACKAGE_README.md; path = ../PACKAGE_README.md; sourceTree = SOURCE_ROOT; };
-		AFD7B7EC2EE78BB3002FE922 /* PACKAGE_STRUCTURE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = PACKAGE_STRUCTURE.md; path = ../PACKAGE_STRUCTURE.md; sourceTree = SOURCE_ROOT; };
-		AFD7B7ED2EE78BB3002FE922 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
+		AFD7B7FD2EE78EB1002FE922 /* UIRouterTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIRouterTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AFD7B7CF2EE78892002FE922 /* TabRouterTest */ = {
+		AFD7B7FF2EE78EB1002FE922 /* UIRouterTest */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TabRouterTest;
+			path = UIRouterTest;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AFD7B7CA2EE78892002FE922 /* Frameworks */ = {
+		AFD7B7FA2EE78EB1002FE922 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,126 +29,103 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AFD7B7C42EE78892002FE922 = {
+		AFD7B7F42EE78EB1002FE922 = {
 			isa = PBXGroup;
 			children = (
-				AFD7B7EB2EE78BB3002FE922 /* PACKAGE_README.md */,
-				AFD7B7EC2EE78BB3002FE922 /* PACKAGE_STRUCTURE.md */,
-				AFD7B7ED2EE78BB3002FE922 /* README.md */,
-				AFD7B7DF2EE788F2002FE922 /* UIRouter */,
-				AFD7B7CF2EE78892002FE922 /* TabRouterTest */,
-				AFD7B7CE2EE78892002FE922 /* Products */,
+				AFD7B7FF2EE78EB1002FE922 /* UIRouterTest */,
+				AFD7B7FE2EE78EB1002FE922 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AFD7B7CE2EE78892002FE922 /* Products */ = {
+		AFD7B7FE2EE78EB1002FE922 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AFD7B7CD2EE78892002FE922 /* TabRouterTest.app */,
+				AFD7B7FD2EE78EB1002FE922 /* UIRouterTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AFD7B7DF2EE788F2002FE922 /* UIRouter */ = {
-			isa = PBXGroup;
-			children = (
-				AFD7B7DB2EE788F2002FE922 /* RouterView.swift */,
-				AFD7B7DC2EE788F2002FE922 /* TabRouterView.swift */,
-				AFD7B7DD2EE788F2002FE922 /* UIRoute.swift */,
-				AFD7B7DE2EE788F2002FE922 /* UIRouter.swift */,
-			);
-			name = UIRouter;
-			path = ../UIRouter;
-			sourceTree = SOURCE_ROOT;
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AFD7B7CC2EE78892002FE922 /* TabRouterTest */ = {
+		AFD7B7FC2EE78EB1002FE922 /* UIRouterTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFD7B7D82EE78894002FE922 /* Build configuration list for PBXNativeTarget "TabRouterTest" */;
+			buildConfigurationList = AFD7B8082EE78EB2002FE922 /* Build configuration list for PBXNativeTarget "UIRouterTest" */;
 			buildPhases = (
-				AFD7B7C92EE78892002FE922 /* Sources */,
-				AFD7B7CA2EE78892002FE922 /* Frameworks */,
-				AFD7B7CB2EE78892002FE922 /* Resources */,
+				AFD7B7F92EE78EB1002FE922 /* Sources */,
+				AFD7B7FA2EE78EB1002FE922 /* Frameworks */,
+				AFD7B7FB2EE78EB1002FE922 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				AFD7B7CF2EE78892002FE922 /* TabRouterTest */,
+				AFD7B7FF2EE78EB1002FE922 /* UIRouterTest */,
 			);
-			name = TabRouterTest;
+			name = UIRouterTest;
 			packageProductDependencies = (
 			);
-			productName = TabRouterTest;
-			productReference = AFD7B7CD2EE78892002FE922 /* TabRouterTest.app */;
+			productName = UIRouterTest;
+			productReference = AFD7B7FD2EE78EB1002FE922 /* UIRouterTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AFD7B7C52EE78892002FE922 /* Project object */ = {
+		AFD7B7F52EE78EB1002FE922 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2610;
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
-					AFD7B7CC2EE78892002FE922 = {
+					AFD7B7FC2EE78EB1002FE922 = {
 						CreatedOnToolsVersion = 26.1.1;
 					};
 				};
 			};
-			buildConfigurationList = AFD7B7C82EE78892002FE922 /* Build configuration list for PBXProject "TabRouterTest" */;
+			buildConfigurationList = AFD7B7F82EE78EB1002FE922 /* Build configuration list for PBXProject "UIRouterTest" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = AFD7B7C42EE78892002FE922;
+			mainGroup = AFD7B7F42EE78EB1002FE922;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = AFD7B7CE2EE78892002FE922 /* Products */;
+			productRefGroup = AFD7B7FE2EE78EB1002FE922 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AFD7B7CC2EE78892002FE922 /* TabRouterTest */,
+				AFD7B7FC2EE78EB1002FE922 /* UIRouterTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AFD7B7CB2EE78892002FE922 /* Resources */ = {
+		AFD7B7FB2EE78EB1002FE922 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFD7B7EE2EE78BB3002FE922 /* PACKAGE_README.md in Resources */,
-				AFD7B7EF2EE78BB3002FE922 /* README.md in Resources */,
-				AFD7B7F02EE78BB3002FE922 /* PACKAGE_STRUCTURE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AFD7B7C92EE78892002FE922 /* Sources */ = {
+		AFD7B7F92EE78EB1002FE922 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFD7B7E02EE788F2002FE922 /* UIRoute.swift in Sources */,
-				AFD7B7E12EE788F2002FE922 /* TabRouterView.swift in Sources */,
-				AFD7B7E22EE788F2002FE922 /* RouterView.swift in Sources */,
-				AFD7B7E32EE788F2002FE922 /* UIRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		AFD7B7D62EE78894002FE922 /* Debug */ = {
+		AFD7B8062EE78EB2002FE922 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -229,7 +189,7 @@
 			};
 			name = Debug;
 		};
-		AFD7B7D72EE78894002FE922 /* Release */ = {
+		AFD7B8072EE78EB2002FE922 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -286,7 +246,7 @@
 			};
 			name = Release;
 		};
-		AFD7B7D92EE78894002FE922 /* Debug */ = {
+		AFD7B8092EE78EB2002FE922 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -301,13 +261,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dapperlabs.TabRouterTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapperlabs.UIRouterTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -319,7 +278,7 @@
 			};
 			name = Debug;
 		};
-		AFD7B7DA2EE78894002FE922 /* Release */ = {
+		AFD7B80A2EE78EB2002FE922 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -334,13 +293,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dapperlabs.TabRouterTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapperlabs.UIRouterTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -355,25 +313,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AFD7B7C82EE78892002FE922 /* Build configuration list for PBXProject "TabRouterTest" */ = {
+		AFD7B7F82EE78EB1002FE922 /* Build configuration list for PBXProject "UIRouterTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFD7B7D62EE78894002FE922 /* Debug */,
-				AFD7B7D72EE78894002FE922 /* Release */,
+				AFD7B8062EE78EB2002FE922 /* Debug */,
+				AFD7B8072EE78EB2002FE922 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFD7B7D82EE78894002FE922 /* Build configuration list for PBXNativeTarget "TabRouterTest" */ = {
+		AFD7B8082EE78EB2002FE922 /* Build configuration list for PBXNativeTarget "UIRouterTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFD7B7D92EE78894002FE922 /* Debug */,
-				AFD7B7DA2EE78894002FE922 /* Release */,
+				AFD7B8092EE78EB2002FE922 /* Debug */,
+				AFD7B80A2EE78EB2002FE922 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AFD7B7C52EE78892002FE922 /* Project object */;
+	rootObject = AFD7B7F52EE78EB1002FE922 /* Project object */;
 }
