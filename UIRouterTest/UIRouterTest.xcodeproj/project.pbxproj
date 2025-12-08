@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AFD7B8AB2EE79A9A002FE922 /* UIRouter in Frameworks */ = {isa = PBXBuildFile; productRef = AFD7B8AA2EE79A9A002FE922 /* UIRouter */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		AFD7B7FD2EE78EB1002FE922 /* UIRouterTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIRouterTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFD7B8AB2EE79A9A002FE922 /* UIRouter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +38,7 @@
 			isa = PBXGroup;
 			children = (
 				AFD7B7FF2EE78EB1002FE922 /* UIRouterTest */,
+				AFD7B8A92EE79A9A002FE922 /* Frameworks */,
 				AFD7B7FE2EE78EB1002FE922 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +49,13 @@
 				AFD7B7FD2EE78EB1002FE922 /* UIRouterTest.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AFD7B8A92EE79A9A002FE922 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,6 +78,7 @@
 			);
 			name = UIRouterTest;
 			packageProductDependencies = (
+				AFD7B8AA2EE79A9A002FE922 /* UIRouter */,
 			);
 			productName = UIRouterTest;
 			productReference = AFD7B7FD2EE78EB1002FE922 /* UIRouterTest.app */;
@@ -343,11 +357,19 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/istsest/UIRouter";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.2;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AFD7B8AA2EE79A9A002FE922 /* UIRouter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFD7B87C2EE7993A002FE922 /* XCRemoteSwiftPackageReference "UIRouter" */;
+			productName = UIRouter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AFD7B7F52EE78EB1002FE922 /* Project object */;
 }
