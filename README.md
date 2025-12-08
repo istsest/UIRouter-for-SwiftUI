@@ -28,24 +28,35 @@ Add UIRouter to your project using Swift Package Manager:
 #### In Xcode
 
 1. Select **File → Add Package Dependencies...**
-2. Enter the package repository URL
-3. Select the version you want to use
+2. Enter the package repository URL: `https://github.com/yourusername/UIRouter.git`
+3. Select the version you want to use (e.g., "Up to Next Major Version" from 1.0.0)
 4. Add the package to your target
 
 #### In Package.swift
 
 ```swift
-dependencies: [
-    .package(url: "https://github.com/yourusername/UIRouter.git", from: "1.0.0")
-]
+// swift-tools-version: 5.9
+import PackageDescription
 
-targets: [
-    .target(
-        name: "YourApp",
-        dependencies: ["UIRouter"]
-    )
-]
+let package = Package(
+    name: "YourApp",
+    platforms: [
+        .iOS(.v16),
+        .macOS(.v13)
+    ],
+    dependencies: [
+        .package(url: "https://github.com/yourusername/UIRouter.git", from: "1.0.0")
+    ],
+    targets: [
+        .target(
+            name: "YourApp",
+            dependencies: ["UIRouter"]
+        )
+    ]
+)
 ```
+
+> **Important:** Make sure your core files are organized in the `Sources/UIRouter/` directory before publishing. See [PACKAGE_STRUCTURE.md](PACKAGE_STRUCTURE.md) for details.
 
 ## Quick Start
 
@@ -251,6 +262,35 @@ struct MyView: View {
 }
 ```
 
+## Project Structure
+
+Before publishing this package, ensure your files are organized correctly:
+
+```
+UIRouter/
+├── Package.swift
+├── README.md
+├── LICENSE
+├── .gitignore
+├── Sources/
+│   └── UIRouter/
+│       ├── UIRouter.swift
+│       ├── UIRoute.swift
+│       ├── RouterView.swift
+│       └── TabRouterView.swift
+├── Tests/
+│   └── UIRouterTests/
+│       └── UIRouterTests.swift
+└── Examples/
+    └── (example files)
+```
+
+See [PACKAGE_STRUCTURE.md](PACKAGE_STRUCTURE.md) for detailed organization instructions.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 ## License
 
 [Add your license here]
@@ -258,3 +298,9 @@ struct MyView: View {
 ## Author
 
 Created by Joon Jang
+
+## Resources
+
+- [Package Structure Guide](PACKAGE_STRUCTURE.md) - How to organize files for Swift Package
+- [Swift Package Manager Documentation](https://swift.org/package-manager/)
+- [SwiftUI Navigation](https://developer.apple.com/documentation/swiftui/navigation)

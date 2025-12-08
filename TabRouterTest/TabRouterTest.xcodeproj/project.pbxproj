@@ -15,6 +15,7 @@
 		AFD7B7EF2EE78BB3002FE922 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B7ED2EE78BB3002FE922 /* README.md */; };
 		AFD7B7F02EE78BB3002FE922 /* PACKAGE_STRUCTURE.md in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B7EC2EE78BB3002FE922 /* PACKAGE_STRUCTURE.md */; };
 		AFD7B7F12EE78BB3002FE922 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7B7EA2EE78BB3002FE922 /* Package.swift */; };
+		AFD7B83B2EE792ED002FE922 /* PACKAGE_STRUCTURE.md in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B83A2EE792ED002FE922 /* PACKAGE_STRUCTURE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		AFD7B7EB2EE78BB3002FE922 /* PACKAGE_README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = PACKAGE_README.md; path = ../PACKAGE_README.md; sourceTree = SOURCE_ROOT; };
 		AFD7B7EC2EE78BB3002FE922 /* PACKAGE_STRUCTURE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = PACKAGE_STRUCTURE.md; path = ../PACKAGE_STRUCTURE.md; sourceTree = SOURCE_ROOT; };
 		AFD7B7ED2EE78BB3002FE922 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
+		AFD7B83A2EE792ED002FE922 /* PACKAGE_STRUCTURE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PACKAGE_STRUCTURE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -58,6 +60,7 @@
 				AFD7B7DF2EE788F2002FE922 /* UIRouter */,
 				AFD7B7CF2EE78892002FE922 /* TabRouterTest */,
 				AFD7B7CE2EE78892002FE922 /* Products */,
+				AFD7B83A2EE792ED002FE922 /* PACKAGE_STRUCTURE.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +150,7 @@
 			files = (
 				AFD7B7EE2EE78BB3002FE922 /* PACKAGE_README.md in Resources */,
 				AFD7B7EF2EE78BB3002FE922 /* README.md in Resources */,
+				AFD7B83B2EE792ED002FE922 /* PACKAGE_STRUCTURE.md in Resources */,
 				AFD7B7F02EE78BB3002FE922 /* PACKAGE_STRUCTURE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
