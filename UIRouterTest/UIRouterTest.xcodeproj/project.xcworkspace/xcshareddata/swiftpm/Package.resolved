@@ -1,13 +1,13 @@
 {
-  "originHash" : "e5f88ca92a137a2c6014a230ffc79760b24584294c2d9f5ed3e3488096e25328",
+  "originHash" : "c89bf4854db91ca9cf795549ba2c94657046132699dbcc34eb27f0f78c303a65",
   "pins" : [
     {
-      "identity" : "uirouter",
+      "identity" : "uirouter-for-swiftui",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/istsest/UIRouter",
+      "location" : "https://github.com/istsest/UIRouter-for-SwiftUI",
       "state" : {
-        "revision" : "a07f83ba26e103b59ccaf2865e598ccf0c3197b5",
-        "version" : "0.0.2"
+        "revision" : "fdbe7311ecf9b51db3c590eb017113cbf005c6e2",
+        "version" : "0.0.4"
       }
     }
   ],
