@@ -1,4 +1,4 @@
-# UIRouter Swift Package
+# UIRouter for SwiftUI Swift Package
 
 A type-safe, SwiftUI-native navigation and routing framework with support for tab-based navigation, independent navigation stacks, and modal presentations.
 
@@ -28,8 +28,8 @@ Add UIRouter to your project using Swift Package Manager:
 #### In Xcode
 
 1. Select **File → Add Package Dependencies...**
-2. Enter the package repository URL: `https://github.com/istsest/UIRouter.git`
-3. Select the version you want to use (e.g., "Up to Next Major Version" from 0.0.3)
+2. Enter the package repository URL: `https://github.com/istsest/UIRouter-for-SwiftUI.git`
+3. Select the version you want to use (e.g., "Up to Next Major Version" from 0.0.4)
 4. Add the package to your target
 
 #### In Package.swift
@@ -45,7 +45,7 @@ let package = Package(
         .macOS(.v13)
     ],
     dependencies: [
-        .package(url: "https://github.com/istsest/UIRouter.git", from: "0.0.3")
+        .package(url: "https://github.com/istsest/UIRouter-for-SwiftUI.git", from: "0.0.4")
     ],
     targets: [
         .target(
@@ -261,45 +261,15 @@ struct MyView: View {
 }
 ```
 
-## Project Structure
-
-Before publishing this package, ensure your files are organized correctly:
-
-```
-UIRouter/
-├── Package.swift
-├── README.md
-├── LICENSE
-├── .gitignore
-├── Sources/
-│   └── UIRouter/
-│       ├── UIRouter.swift
-│       ├── UIRoute.swift
-│       ├── RouterView.swift
-│       └── TabRouterView.swift
-├── Tests/
-│   └── UIRouterTests/
-│       └── UIRouterTests.swift
-└── Examples/
-    └── (example files)
-```
-
-See [PACKAGE_STRUCTURE.md](PACKAGE_STRUCTURE.md) for detailed organization instructions.
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-[Add your license here]
+MIT License
 
 ## Author
 
 Created by Joon Jang
 
-## Resources
-
-- [Package Structure Guide](PACKAGE_STRUCTURE.md) - How to organize files for Swift Package
-- [Swift Package Manager Documentation](https://swift.org/package-manager/)
-- [SwiftUI Navigation](https://developer.apple.com/documentation/swiftui/navigation)
