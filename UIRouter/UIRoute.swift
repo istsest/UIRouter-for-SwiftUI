@@ -10,7 +10,7 @@ public protocol UIRoute: Hashable, Identifiable {
     func view() -> AnyView
 }
 
-extension UIRoute {
+public extension UIRoute {
     var id: Self { self }
 }
 

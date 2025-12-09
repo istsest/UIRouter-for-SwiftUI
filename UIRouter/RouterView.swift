@@ -13,7 +13,7 @@ public struct RouterView<Root: View>: View {
     
     private let root: Root
     
-    init(@ViewBuilder root: () -> Root) {
+    public init(@ViewBuilder root: () -> Root) {
         self.root = root()
     }
     
@@ -64,5 +64,19 @@ private extension RouterView {
                 }
             }
         )
+    }
+}
+
+struct InjectRouter: ViewModifier {
+    public func body(content: Content) -> some View {
+        RouterView {
+            content
+        }
+    }
+}
+
+public extension View {
+    @MainActor func injectRouter() -> some View {
+        return modifier(InjectRouter())
     }
 }
