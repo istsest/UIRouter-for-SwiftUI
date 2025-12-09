@@ -66,3 +66,17 @@ private extension RouterView {
         )
     }
 }
+
+struct InjectRouter: ViewModifier {
+    public func body(content: Content) -> some View {
+        RouterView {
+            content
+        }
+    }
+}
+
+public extension View {
+    @MainActor func injectRouter() -> some View {
+        return modifier(InjectRouter())
+    }
+}
