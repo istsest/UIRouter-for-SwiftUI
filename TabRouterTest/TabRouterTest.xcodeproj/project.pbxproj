@@ -11,10 +11,6 @@
 		AFD7B7E12EE788F2002FE922 /* TabRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7B7DC2EE788F2002FE922 /* TabRouterView.swift */; };
 		AFD7B7E22EE788F2002FE922 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7B7DB2EE788F2002FE922 /* RouterView.swift */; };
 		AFD7B7E32EE788F2002FE922 /* UIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7B7DE2EE788F2002FE922 /* UIRouter.swift */; };
-		AFD7B7EE2EE78BB3002FE922 /* PACKAGE_README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B7EB2EE78BB3002FE922 /* PACKAGE_README.md */; };
-		AFD7B7EF2EE78BB3002FE922 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B7ED2EE78BB3002FE922 /* README.md */; };
-		AFD7B7F02EE78BB3002FE922 /* PACKAGE_STRUCTURE.md in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B7EC2EE78BB3002FE922 /* PACKAGE_STRUCTURE.md */; };
-		AFD7B83B2EE792ED002FE922 /* PACKAGE_STRUCTURE.md in Resources */ = {isa = PBXBuildFile; fileRef = AFD7B83A2EE792ED002FE922 /* PACKAGE_STRUCTURE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,10 +141,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFD7B7EE2EE78BB3002FE922 /* PACKAGE_README.md in Resources */,
-				AFD7B7EF2EE78BB3002FE922 /* README.md in Resources */,
-				AFD7B83B2EE792ED002FE922 /* PACKAGE_STRUCTURE.md in Resources */,
-				AFD7B7F02EE78BB3002FE922 /* PACKAGE_STRUCTURE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
