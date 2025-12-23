@@ -87,15 +87,24 @@ struct HomeTabView: View {
                 }
                 .buttonStyle(.bordered)
                 
+                Button("🧪 Deep Modal Test") {
+                    router.presentSheet(AppRoute.deepModalTest)
+                }
+                .buttonStyle(.bordered)
+                .tint(.purple)
+                
                 Button("Switch to Profile Tab") {
                     coordinator.selectTab(.profile)
                 }
                 .buttonStyle(.bordered)
             }
             
-            Text("Navigation Stack Depth: \(router.depth)")
-                .font(.caption)
-                .foregroundStyle(.secondary)
+            VStack(spacing: 4) {
+                Text("Navigation Stack Depth: \(router.depth)")
+                Text("Modal Depth: \(router.modalDepth)")
+            }
+            .font(.caption)
+            .foregroundStyle(.secondary)
         }
         .padding()
         .navigationTitle("Home")
