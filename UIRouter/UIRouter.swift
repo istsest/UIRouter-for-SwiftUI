@@ -62,7 +62,7 @@ public extension UIRouter {
     
     func dismissModal() {
         guard !modalStack.isEmpty else { return }
-        modalStack.removeLast()
+        dismissToIndex(modalStack.count - 1)
     }
     
     func dismissAllModals() {
