@@ -186,7 +186,12 @@ extension UIRouter {
         
         // If already transitioning, queue this swipe dismiss operation with retry limit
         guard !isTransitioning else {
-            guard retryCount < Self.maxRetryAttempts else { return }
+            guard retryCount < Self.maxRetryAttempts else {
+                #if DEBUG
+                print("[UIRouter] Warning: Swipe dismiss from index \(index) was dropped after \(retryCount) retry attempts due to ongoing transitions.")
+                #endif
+                return
+            }
             DispatchQueue.main.asyncAfter(deadline: .now() + Self.modalTransitionDuration) { [weak self] in
                 self?.handleSwipeDismiss(fromIndex: index, retryCount: retryCount + 1)
             }
