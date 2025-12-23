@@ -81,6 +81,7 @@ public extension UIRouter {
     }
     
     func dismissAllModals() {
+        guard !modalStack.isEmpty else { return }
         dismissToIndex(0)
     }
     
