@@ -271,7 +271,8 @@ struct ModalLevelView: View {
     
     private var levelColor: Color {
         let colors: [Color] = [.blue, .green, .orange, .pink, .purple, .red, .cyan, .mint]
-        return colors[(level - 1) % colors.count]
+        let safeLevel = max(level, 1)
+        return colors[(safeLevel - 1) % colors.count]
     }
     
     var body: some View {

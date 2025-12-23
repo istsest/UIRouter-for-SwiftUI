@@ -23,6 +23,11 @@ public struct ModalRoute: Identifiable {
     public let id = UUID()
     public let route: any UIRoute
     public let style: PresentationStyle
+    
+    public init(route: any UIRoute, style: PresentationStyle) {
+        self.route = route
+        self.style = style
+    }
 }
 
 struct AnyRoute: Hashable {
