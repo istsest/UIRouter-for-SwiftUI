@@ -209,7 +209,11 @@ private extension UIRouter {
         if isTransitioning {
             pendingModals.append(modal)
         } else {
+            // When presenting directly (not queued), mark as transitioning
+            // and schedule completion to avoid overlapping animations.
+            isTransitioning = true
             modalStack.append(modal)
+            scheduleTransitionCompletion()
         }
     }
     
