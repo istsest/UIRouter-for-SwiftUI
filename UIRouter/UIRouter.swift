@@ -279,7 +279,13 @@ private extension UIRouter {
     /// - Parameter targetIndex: The index to dismiss down to (exclusive - this index is not kept)
     /// - Parameter retryCount: Internal retry counter (do not set manually)
     func dismissToIndex(_ targetIndex: Int, retryCount: Int = 0) {
-        guard modalStack.count > targetIndex else {
+        // Validate that targetIndex is within the meaningful range 0...modalStack.count.
+        // - targetIndex == modalStack.count is a valid no-op (keep all modals).
+        // - Values outside this range are likely caller errors and will be logged in DEBUG builds.
+        guard targetIndex >= 0 && targetIndex <= modalStack.count else {
+            #if DEBUG
+            print("UIRouter.dismissToIndex: Invalid targetIndex \(targetIndex). Expected between 0 and \(modalStack.count). No operation performed.")
+            #endif
             return
         }
         
