@@ -169,10 +169,17 @@ private extension UIRouter {
     
     func processPendingModals() {
         guard !pendingModals.isEmpty else {
-            // Delay resetting isTransitioning to ensure any in-flight animations
-            // have time to complete before we allow new transitions
-            DispatchQueue.main.asyncAfter(deadline: .now() + Self.modalTransitionDuration) { [weak self] in
-                self?.isTransitioning = false
+            // If there are no pending modals and the modal stack is empty,
+            // we can safely reset transitioning state immediately without
+            // waiting for an extra animation duration.
+            if modalStack.isEmpty {
+                isTransitioning = false
+            } else {
+                // Delay resetting isTransitioning to ensure any in-flight animations
+                // have time to complete before we allow new transitions
+                DispatchQueue.main.asyncAfter(deadline: .now() + Self.modalTransitionDuration) { [weak self] in
+                    self?.isTransitioning = false
+                }
             }
             return
         }
