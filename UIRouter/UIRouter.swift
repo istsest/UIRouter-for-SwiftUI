@@ -165,6 +165,14 @@ private extension UIRouter {
             return
         }
         
+        // If already transitioning, queue this dismiss operation
+        guard !isTransitioning else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Self.modalTransitionDuration) { [weak self] in
+                self?.dismissToIndex(targetIndex)
+            }
+            return
+        }
+        
         isTransitioning = true
         
         // If only one modal to dismiss, just remove it with animation
@@ -189,16 +197,16 @@ private extension UIRouter {
         }
         
         // Dismiss the remaining topmost modal with animation
-        DispatchQueue.main.async {
-            self.modalStack.removeLast()
-            self.scheduleTransitionCompletion()
+        DispatchQueue.main.async { [weak self] in
+            self?.modalStack.removeLast()
+            self?.scheduleTransitionCompletion()
         }
     }
     
     func scheduleTransitionCompletion() {
         // Wait for dismiss animation to complete before processing pending modals
-        DispatchQueue.main.asyncAfter(deadline: .now() + Self.modalTransitionDuration) {
-            self.processPendingModals()
+        DispatchQueue.main.asyncAfter(deadline: .now() + Self.modalTransitionDuration) { [weak self] in
+            self?.processPendingModals()
         }
     }
 }
