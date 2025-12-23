@@ -19,8 +19,8 @@ enum PresentationStyle {
     case fullScreenCover
 }
 
-struct ModalRoute: Identifiable {
-    let id = UUID()
+public struct ModalRoute: Identifiable {
+    public let id = UUID()
     let route: any UIRoute
     let style: PresentationStyle
 }

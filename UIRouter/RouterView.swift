@@ -26,44 +26,66 @@ public struct RouterView<Root: View>: View {
                         .environmentObject(router)
                 }
         }
-        .sheet(item: sheetBinding) { modalRoute in
-            modalRoute.route.view()
-                .environmentObject(router)
-        }
-        .fullScreenCover(item: fullScreenCoverBinding) { modalRoute in
-            modalRoute.route.view()
-                .environmentObject(router)
-        }
+        .modifier(ModalStackModifier(router: router, currentIndex: 0))
     }
 }
 
-private extension RouterView {
-    var sheetBinding: Binding<ModalRoute?> {
+// MARK: - Modal Stack Modifier
+private struct ModalStackModifier: ViewModifier {
+    @ObservedObject var router: UIRouter
+    let currentIndex: Int
+    
+    func body(content: Content) -> some View {
+        content
+            .sheet(item: sheetBinding) { modalRoute in
+                modalRoute.route.view()
+                    .environmentObject(router)
+                    .modifier(ModalStackModifier(router: router, currentIndex: currentIndex + 1))
+            }
+            .fullScreenCover(item: fullScreenCoverBinding) { modalRoute in
+                modalRoute.route.view()
+                    .environmentObject(router)
+                    .modifier(ModalStackModifier(router: router, currentIndex: currentIndex + 1))
+            }
+    }
+    
+    private var currentModal: ModalRoute? {
+        guard currentIndex < router.modalStack.count else { return nil }
+        return router.modalStack[currentIndex]
+    }
+    
+    private var sheetBinding: Binding<ModalRoute?> {
         Binding(
             get: {
-                guard let modal = router.modal, modal.style == .sheet else { return nil }
+                guard let modal = currentModal, modal.style == .sheet else { return nil }
                 return modal
             },
             set: { newValue in
                 if newValue == nil {
-                    router.modal = nil
+                    dismissFromIndex()
                 }
             }
         )
     }
     
-    var fullScreenCoverBinding: Binding<ModalRoute?> {
+    private var fullScreenCoverBinding: Binding<ModalRoute?> {
         Binding(
             get: {
-                guard let modal = router.modal, modal.style == .fullScreenCover else { return nil }
+                guard let modal = currentModal, modal.style == .fullScreenCover else { return nil }
                 return modal
             },
             set: { newValue in
                 if newValue == nil {
-                    router.modal = nil
+                    dismissFromIndex()
                 }
             }
         )
+    }
+    
+    private func dismissFromIndex() {
+        // When user dismisses via swipe, remove all modals from this index onwards
+        guard currentIndex < router.modalStack.count else { return }
+        router.modalStack.removeSubrange(currentIndex...)
     }
 }
 

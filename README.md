@@ -8,6 +8,8 @@ A type-safe, SwiftUI-native navigation and routing framework with support for ta
 - ✅ Simple single-stack navigation
 - ✅ Tab-based navigation with independent stacks per tab
 - ✅ Modal presentations (sheets and full-screen covers)
+- ✅ **Deep modal presentation** - Present modals on top of modals
+- ✅ **Sequential dismiss** - Dismiss multiple modals with smooth animation
 - ✅ Programmatic navigation control
 - ✅ SwiftUI-native implementation
 - ✅ No third-party dependencies
@@ -188,8 +190,24 @@ router.presentSheet(AppRoute.profile(name: "John"))
 // Present full screen cover
 router.presentFullScreenCover(AppRoute.about)
 
-// Dismiss modal
+// Present multiple modals (deep presentation)
+router.presentSheet(AppRoute.firstModal)
+router.presentSheet(AppRoute.secondModal)  // Stacks on top of first modal
+
+// Dismiss single modal
 router.dismissModal()
+
+// Dismiss multiple modals
+router.dismissModals(2)
+
+// Dismiss all modals
+router.dismissAllModals()
+
+// Dismiss modals after a specific route (keeps the specified route)
+router.dismissModalsAfter(AppRoute.firstModal)
+
+// Dismiss modals up to and including a specific route
+router.dismissModalsTo(AppRoute.secondModal)
 ```
 
 ### Tab Management (TabRouterView only)
@@ -214,6 +232,12 @@ let isEmpty = router.isEmpty
 // Check if modal is presented
 let hasModal = router.isModalPresented
 
+// Current modal stack depth
+let modalCount = router.modalDepth
+
+// Get the topmost modal
+let topModal = router.currentModal
+
 // Currently selected tab (TabRouterView only)
 let currentTab = router.selectedTab
 ```
@@ -227,6 +251,34 @@ Each tab maintains its own navigation stack, so users can navigate independently
 ### Type-Safe Routing
 
 All routes conform to the `UIRoute` protocol, ensuring type safety and compile-time checking.
+
+### Deep Modal Presentation
+
+Present modals on top of modals with full stack management:
+
+```swift
+// Stack multiple modals
+router.presentSheet(AppRoute.settings)
+router.presentSheet(AppRoute.profile)
+router.presentFullScreenCover(AppRoute.editor)
+
+// Dismiss all at once with smooth animation
+router.dismissAllModals()
+```
+
+### Optimized Modal Animation
+
+When dismissing multiple modals, only the topmost modal animates while others are removed instantly. This prevents animation overlap and provides a clean user experience.
+
+### Safe Transition Handling
+
+Automatically queues presentation requests during dismiss transitions, preventing crashes from overlapping animations:
+
+```swift
+// Safe to call immediately - automatically queued
+router.dismissAllModals()
+router.presentSheet(AppRoute.newModal)  // Waits for dismiss to complete
+```
 
 ### Shared Modals
 

@@ -44,19 +44,24 @@ struct DetailView: View {
             
             VStack(spacing: 12) {
                 Button("Go to Settings") {
-                    router.push(AppRoute.settings)
+//                    router.push(AppRoute.settings)
+                    router.presentFullScreenCover(AppRoute.detail(text: "Hello from Settings"))
                 }
                 
                 Button("Show Profile (Sheet)") {
-                    router.presentSheet(AppRoute.profile(name: "Joon"))
+//                    router.presentSheet(AppRoute.profile(name: "Joon"))
+                    router.dismissModals(3)
+                    router.presentFullScreenCover(AppRoute.detail(text: "Hello from Settings"))
                 }
                 
                 Button("Pop") {
-                    router.pop()
+//                    router.pop()
+                    router.dismissModal()
                 }
                 
                 Button("Pop to Root") {
-                    router.popToRoot()
+//                    router.popToRoot()
+                    router.dismissAllModals()
                 }
             }
             .buttonStyle(.bordered)
