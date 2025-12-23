@@ -28,6 +28,9 @@ public class UIRouter: ObservableObject {
     
     /// Maximum number of retry attempts for queued operations to prevent unbounded callbacks
     private static let maxRetryAttempts = 10
+    
+    /// Maximum number of pending modals to prevent unbounded queue growth
+    private static let maxPendingModals = 10
 }
 
 // MARK: - Navigation Methods
@@ -212,6 +215,13 @@ extension UIRouter {
 private extension UIRouter {
     func enqueueOrPresent(_ modal: ModalRoute) {
         if isTransitioning {
+            // Check pending queue size to prevent unbounded growth
+            guard pendingModals.count < Self.maxPendingModals else {
+                #if DEBUG
+                print("[UIRouter] Warning: Pending modal queue is full (\(Self.maxPendingModals)). Modal presentation ignored.")
+                #endif
+                return
+            }
             pendingModals.append(modal)
         } else {
             // When presenting directly (not queued), mark as transitioning
@@ -259,7 +269,15 @@ private extension UIRouter {
         }
     }
     
-    /// Dismisses modals to a target index, animating only the topmost modal
+    /// Dismisses modals down to a target index, keeping modals at indices 0..<targetIndex.
+    ///
+    /// For example, if the stack has 4 modals [0, 1, 2, 3] and targetIndex is 2,
+    /// modals at indices 2 and 3 are dismissed, leaving [0, 1].
+    ///
+    /// - Note: If targetIndex >= modalStack.count, no operation is performed.
+    ///   Only the topmost modal animates; intermediate modals are removed instantly.
+    /// - Parameter targetIndex: The index to dismiss down to (exclusive - this index is not kept)
+    /// - Parameter retryCount: Internal retry counter (do not set manually)
     func dismissToIndex(_ targetIndex: Int, retryCount: Int = 0) {
         guard modalStack.count > targetIndex else {
             return
