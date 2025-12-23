@@ -268,9 +268,9 @@ private extension UIRouter {
         // If already transitioning, queue this dismiss operation with retry limit
         guard !isTransitioning else {
             if retryCount >= Self.maxRetryAttempts {
-#if DEBUG
+                #if DEBUG
                 print("UIRouter.dismissToIndex: Dropping dismiss to index \(targetIndex) after \(retryCount) retries. Current modal depth: \(modalStack.count).")
-#endif
+                #endif
                 return
             }
             
