@@ -241,7 +241,12 @@ struct DeepModalTestView: View {
                         Text("Dismiss Modals")
                             .font(.headline)
                         
+                        // Note: This test intentionally relies on the router's queuing behavior:
+                        // `presentSheet` is queued and will be performed after `dismissAllModals`
+                        // finishes its dismissal animation (~0.35s). During this time, there is
+                        // no additional UI element shown, so we log the action for clarity.
                         Button("Dismiss All & Present New") {
+                            print("DeepModalTestView: dismissing all modals and queuing AppRoute.modalLevel(1) sheet.")
                             router.dismissAllModals()
                             router.presentSheet(AppRoute.modalLevel(1))
                         }
