@@ -116,6 +116,15 @@ extension UIRouter {
     internal func handleSwipeDismiss(fromIndex index: Int) {
         guard index < modalStack.count else { return }
         
+        // If already transitioning, queue this swipe dismiss operation
+        guard !isTransitioning else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Self.modalTransitionDuration) { [weak self] in
+                guard let self = self, !self.isTransitioning else { return }
+                self.handleSwipeDismiss(fromIndex: index)
+            }
+            return
+        }
+        
         isTransitioning = true
         
         // Remove all modals from this index onwards (SwiftUI handles animation)
@@ -145,11 +154,14 @@ private extension UIRouter {
         let next = pendingModals.removeFirst()
         modalStack.append(next)
         
-        // Process remaining pending modals after a short delay
+        // Process remaining pending modals or wait for last modal's animation to complete
         if !pendingModals.isEmpty {
             scheduleNextPendingModal()
         } else {
-            isTransitioning = false
+            // Wait for the last modal's presentation animation to complete
+            DispatchQueue.main.asyncAfter(deadline: .now() + Self.modalTransitionDuration) { [weak self] in
+                self?.isTransitioning = false
+            }
         }
     }
     
@@ -168,7 +180,8 @@ private extension UIRouter {
         // If already transitioning, queue this dismiss operation
         guard !isTransitioning else {
             DispatchQueue.main.asyncAfter(deadline: .now() + Self.modalTransitionDuration) { [weak self] in
-                self?.dismissToIndex(targetIndex)
+                guard let self = self, !self.isTransitioning else { return }
+                self.dismissToIndex(targetIndex)
             }
             return
         }

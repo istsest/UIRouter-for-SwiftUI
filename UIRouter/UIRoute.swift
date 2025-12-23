@@ -19,7 +19,12 @@ public enum PresentationStyle {
     case fullScreenCover
 }
 
+/// Represents a modal presentation in the modal stack.
+/// Each instance has a unique ID, so even modals wrapping the same route type
+/// are treated as distinct instances for SwiftUI's identity system.
 public struct ModalRoute: Identifiable {
+    /// Unique identifier for this modal instance.
+    /// Each ModalRoute gets a new UUID, ensuring distinct identity in the stack.
     public let id = UUID()
     public let route: any UIRoute
     public let style: PresentationStyle
